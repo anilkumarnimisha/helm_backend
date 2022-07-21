@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "mykubeappchart.fullname" . }}
+  name: {{ include "app-helm-charts.fullname" . }}
   labels:
-    {{- include "mykubeappchart.labels" . | nindent 4 }}
+    {{- include "app-helm-charts.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "mykubeappchart.fullname" . }}
+    name: {{ include "app-helm-charts.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:
