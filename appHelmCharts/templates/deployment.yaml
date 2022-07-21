@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "myKubeAppChart.fullname" . }}
+  name: {{ include "mykubeappchart.fullname" . }}
   labels:
-    {{- include "myKubeAppChart.labels" . | nindent 4 }}
+    {{- include "mykubesppchart.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "myKubeAppChart.selectorLabels" . | nindent 6 }}
+      {{- include "mykubeappchart.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,13 +18,13 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "myKubeAppChart.selectorLabels" . | nindent 8 }}
+        {{- include "mykubeappchart.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "myKubeAppChart.serviceAccountName" . }}
+      serviceAccountName: {{ include "mykubeappachart.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
