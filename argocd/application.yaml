@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/anilkumarnimisha/helm_backend.git
     targetRevision: HEAD 
-    path: appHelmCharts
+    path: app-helm-charts
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp
