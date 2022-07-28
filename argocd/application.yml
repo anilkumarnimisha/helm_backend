@@ -10,6 +10,11 @@ spec:
     repoURL: https://github.com/anilkumarnimisha/helm_backend.git
     targetRevision: HEAD 
     path: app-helm-charts
+    helm:
+      values: |
+         image:
+	   tag: "1.0"
+         ingress: myapp-argo-application.$INGRESS_HOST.xip.io
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp
@@ -32,6 +37,11 @@ spec:
     repoURL: https://github.com/anilkumarnimisha/helm_backend.git
     targetRevision: HEAD
     path: web-helm-charts
+    helm:
+      values: |
+         image:
+           tag: "1.0"
+         ingress: myweb-argo-application.$INGRESS_HOST.xip.io
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp
