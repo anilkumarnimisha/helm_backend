@@ -19,3 +19,25 @@ spec:
     automated:
       selfHeal: true
       prune: true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myweb-argo-application
+  namespace: default
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/anilkumarnimisha/helm_backend.git
+    targetRevision: HEAD
+    path: web-helm-charts
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: myapp
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true
