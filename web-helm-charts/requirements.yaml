@@ -1,5 +1,0 @@
-dependencies:
-- name: myapp
-  version: 1.41.2
-  repository: https://github.com/anilkumarnimisha/helm_backend.git/app-helm-charts/
-

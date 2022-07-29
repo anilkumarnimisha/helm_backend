@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: nimishaanilkumar/kube_frontend
+  repository: nimishaanilkumar/webapp
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "1.0"
@@ -38,7 +38,7 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: LoadBalancer
+  type: NodePort
   port: 3000
 
 ingress:
