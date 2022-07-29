@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/anilkumarnimisha/helm_backend.git
     targetRevision: HEAD 
-    path: app-helm-charts
+    path: subcharts/app-helm-charts
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp
@@ -31,7 +31,7 @@ spec:
   source:
     repoURL: https://github.com/anilkumarnimisha/helm_backend.git
     targetRevision: HEAD
-    path: web-helm-charts
+    path: charts
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp
