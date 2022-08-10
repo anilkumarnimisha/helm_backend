@@ -1,2 +1,0 @@
-NEXT_PUBLIC_API="http://myapp-argo-application-app-helm-chart.myapp.svc.cluster.local:8000/api"
-
