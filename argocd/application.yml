@@ -2,6 +2,8 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: myapp-argo-application
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
   namespace: default
 spec:
   project: default
@@ -25,6 +27,8 @@ kind: Application
 metadata:
   name: myweb-argo-application
   namespace: default
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
 
