@@ -1,0 +1,6 @@
+dependencies:
+- name: app-helm-charts
+  repository: file://../subcharts/app-helm-charts
+  version: 1.0.0
+digest: sha256:afe8c280b73e754ea8c52953e7e5e52db6aae6d89919aa7ed150cb9bc0e0a727
+generated: "2022-08-10T12:37:20.087696+05:30"
